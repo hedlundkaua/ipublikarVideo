@@ -1,0 +1,22 @@
+[Unit]
+Description=Publi dual YouTube live service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/publi
+EnvironmentFile=/etc/publi/live.env
+ExecStart=/opt/publi/.venv/bin/python /opt/publi/live_service.py --db /opt/publi/publi.db --root /opt/publi/live
+Restart=always
+RestartSec=5
+User=publi
+Group=publi
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+StandardOutput=append:/var/log/publi/live.log
+StandardError=append:/var/log/publi/live.log
+
+[Install]
+WantedBy=multi-user.target

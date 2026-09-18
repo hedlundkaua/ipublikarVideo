@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+*.db-*
+*.db.*.lock
+output/
+live/
+logs/
+.playwright-mcp/
+*.orig
+secrets/

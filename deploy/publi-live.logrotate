@@ -1,0 +1,9 @@
+/var/log/publi/live.log {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    copytruncate
+    create 0600 publi publi
+}
